@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 1s ease forwards;
+}
+/* TRAIT JAUNE ANIMÉ */
+.animated-line {
+  width: 100px;
+  height: 6px;
+  background: linear-gradient(90deg, #F4C542, #FFD966);
+  border-radius: 10px;
+  transition: all 0.4s ease;
+}
+
+.group:hover .animated-line {
+  width: 180px;
+  box-shadow: 0 0 10px rgba(244, 197, 66, 0.6);
+}
+
+/* ANIMATION FADE */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 1s ease forwards;
+}
