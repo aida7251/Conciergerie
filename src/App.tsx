@@ -8,7 +8,7 @@ import FAQ from "./components/FAQ";
 import BlogPreview from "./components/BlogPreview";
 import Footer from "./components/Footer";
 
-<Footer />
+{/* <Footer /> */}
 function App() {
   return (
     <>
@@ -16,7 +16,7 @@ function App() {
       <Navbar />
 
       {/* CONTENU */}
-      <div className="pt-20">
+      <div >
 
         {/* HERO */}
         <Hero />

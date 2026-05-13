@@ -1,6 +1,6 @@
 export default function Hero() {
   return (
-    <section className="relative w-full h-[90vh] overflow-hidden">
+<section className="relative w-full h-screen overflow-hidden -mt-[1px]">
 
       {/* VIDEO */}
       <video
@@ -8,10 +8,11 @@ export default function Hero() {
         loop
         muted
         playsInline
-        className="absolute top-0 left-0 w-full h-full object-cover"
+        className="absolute top-0 left-0 w-full h-full object-cover block"
       >
         <source src="/video.mp4" type="video/mp4" />
       </video>
+      
 
       {/* OVERLAY */}
       <div className="absolute top-0 left-0 w-full h-full bg-black/40"></div>
@@ -20,7 +21,7 @@ export default function Hero() {
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-6">
 
         <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-          Votre conciergerie à Lorient & Lyon
+   Rentabilisez votre bien en toute sérénité
         </h1>
 
         <p className="text-lg md:text-xl text-white/90 max-w-2xl mb-8">

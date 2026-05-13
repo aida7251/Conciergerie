@@ -17,7 +17,7 @@ export default function Footer() {
         {/* CONTACT */}
         <div>
           <h4 className="font-semibold mb-4">Contact</h4>
-          <p className="text-sm">Email : contact@alb-conciergerie.fr</p>
+          <p className="text-sm">Email : contact@onciergerie.fr</p>
           <p className="text-sm">Téléphone : 06 00 00 00 00</p>
           <p className="text-sm">Adresse : 10 rue Exemple, 56100 Lorient</p>
         </div>
@@ -58,7 +58,7 @@ export default function Footer() {
 
       {/* BAS */}
       <div className="border-t border-gray-600 mt-10 pt-6 text-center text-sm text-gray-400">
-        © 2026 ALB Conciergerie - Tous droits réservés
+        © 2026 Conciergerie - Tous droits réservés
       </div>
 
     </footer>
