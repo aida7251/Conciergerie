@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
-const services = [
+// ─── SERVICES AIRBNB ──────────────────────────────────────────────────────────
+const airbnbServices = [
   {
     id: "annonce",
     title: "Annonces Airbnb & Booking",
@@ -29,7 +30,7 @@ const services = [
     title: "Assurance",
     video: "/videos/assurance.mp4",
     description:
-      "Gestion de l’assurance Airbnb et couverture complémentaire.",
+      "Gestion de l'assurance Airbnb et couverture complémentaire.",
   },
   {
     id: "maintenance",
@@ -68,88 +69,187 @@ const services = [
   },
 ];
 
+// ─── SERVICES CHANTIER ────────────────────────────────────────────────────────
+const chantierServices = [
+  {
+    id: "reporting",
+    title: "Reporting hebdomadaire",
+    video: "/videos/chantier-reporting.mp4",
+    description:
+      "Photos et vidéos horodatées de votre chantier chaque vendredi.",
+  },
+  {
+    id: "envois",
+    title: "Contrôle des envois d'argent",
+    video: "/videos/chantier-envois.mp4",
+    description:
+      "Vérification sous 48h que votre argent est bien en matériaux.",
+  },
+  {
+    id: "livraisons",
+    title: "Contrôle des livraisons",
+    video: "/videos/chantier-livraisons.mp4",
+    description:
+      "Présence physique au moment de chaque livraison de matériaux.",
+  },
+  {
+    id: "devis",
+    title: "Analyse de devis",
+    video: "/videos/chantier-devis.mp4",
+    description:
+      "Comparaison avec les prix réels du marché à Dakar.",
+  },
+  {
+    id: "urgence",
+    title: "Intervention d'urgence",
+    video: "/videos/chantier-urgence.mp4",
+    description:
+      "Visite sous 24 à 48h en cas de doute ou d'anomalie.",
+  },
+  {
+    id: "reception",
+    title: "Réception finale",
+    video: "/videos/chantier-reception.mp4",
+    description:
+      "Visite complète avant le paiement du solde au maçon.",
+  },
+];
+
+type TabKey = "airbnb" | "chantier";
+
+const tabsConfig: Record<
+  TabKey,
+  { label: string; services: typeof airbnbServices; route: string; ctaLabel: string }
+> = {
+  airbnb: {
+    label: "Location courte durée",
+    services: airbnbServices,
+    route: "/services",
+    ctaLabel: "Découvrir tous nos services Airbnb",
+  },
+  chantier: {
+    label: "Suivi de chantier · Sénégal",
+    services: chantierServices,
+    route: "/chantier",
+    ctaLabel: "Découvrir le suivi de chantier",
+  },
+};
+
 export default function Services() {
+  const [tab, setTab] = useState<TabKey>("airbnb");
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const navigate = useNavigate();
+  const current = tabsConfig[tab];
+
+  const handleTabChange = (key: TabKey) => {
+    setTab(key);
+    setActiveIndex(null);
+  };
 
   return (
     <section className="bg-[#1F3D37] py-24 px-6 md:px-10">
 
       {/* TITRE */}
-      <div className="text-center mb-16">
+      <div className="text-center mb-10">
         <div className="animated-line mx-auto mb-4"></div>
-        <h2 className="text-4xl font-bold text-white">
-          Nos Services
-        </h2>
+        <h2 className="text-4xl font-bold text-white">Nos Services</h2>
+        <p className="text-white/50 mt-3 max-w-xl mx-auto text-sm">
+          Choisissez l'univers qui vous concerne.
+        </p>
       </div>
 
-      {/* GRID */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      {/* TOGGLE TABS */}
+      <div className="flex justify-center mb-14">
+        <div className="inline-flex bg-white/8 border border-white/12 rounded-2xl p-1.5">
+          {(Object.keys(tabsConfig) as TabKey[]).map((key) => (
+            <button
+              key={key}
+              onClick={() => handleTabChange(key)}
+              className={`px-5 py-2.5 rounded-xl text-sm font-medium transition-all duration-300 whitespace-nowrap ${
+                tab === key
+                  ? "bg-[#F4C542] text-[#1A1A1A] shadow-md"
+                  : "text-white/55 hover:text-white"
+              }`}
+            >
+              {tabsConfig[key].label}
+            </button>
+          ))}
+        </div>
+      </div>
 
-        {services.map((service, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            viewport={{ once: true }}
-            className="relative rounded-xl overflow-hidden cursor-pointer group transition duration-500"
-            onClick={() => setActiveIndex(index)}
-            onMouseLeave={() => setActiveIndex(null)}
-          >
+      {/* GRID — ANIMATED ON TAB CHANGE */}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={tab}
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -16 }}
+          transition={{ duration: 0.3 }}
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto"
+        >
+          {current.services.map((service, index) => (
+            <motion.div
+              key={service.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: index * 0.06 }}
+              viewport={{ once: true }}
+              className="relative rounded-xl overflow-hidden cursor-pointer group transition duration-500"
+              onClick={() => setActiveIndex(index)}
+              onMouseLeave={() => setActiveIndex(null)}
+            >
+              {/* VIDEO */}
+              <video
+                src={service.video}
+                muted
+                loop
+                playsInline
+                autoPlay
+                className="w-full h-[250px] object-cover group-hover:scale-110 transition duration-700 bg-[#162e29]"
+              />
 
-            {/* VIDEO */}
-            <video
-              src={service.video}
-              muted
-              loop
-              playsInline
-              autoPlay
-              className="w-full h-[250px] object-cover group-hover:scale-110 transition duration-700"
-            />
+              {/* OVERLAY */}
+              <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition duration-300"></div>
 
-            {/* OVERLAY */}
-            <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition duration-300"></div>
-
-            {/* CONTENU */}
-            <div className="absolute bottom-0 p-4 text-white">
-
-              <h3 className="text-lg font-semibold">
-                {service.title}
-              </h3>
-
-              {activeIndex === index && (
-                <div className="mt-2">
-                  <p className="text-sm mb-3">
-                    {service.description}
-                  </p>
-
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      navigate(`/services#${service.id}`);
-                    }}
-                    className="bg-[#F4C542] text-black px-4 py-2 rounded-lg text-sm hover:scale-105 transition"
-                  >
-                    Découvrir
-                  </button>
-                </div>
+              {/* TAG si chantier */}
+              {tab === "chantier" && (
+                <span className="absolute top-3 right-3 bg-[#F4C542] text-[#1A1A1A] text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wide">
+                  Sénégal
+                </span>
               )}
 
-            </div>
+              {/* CONTENU */}
+              <div className="absolute bottom-0 p-4 text-white">
+                <h3 className="text-lg font-semibold">{service.title}</h3>
 
-          </motion.div>
-        ))}
+                {activeIndex === index && (
+                  <div className="mt-2">
+                    <p className="text-sm mb-3">{service.description}</p>
 
-      </div>
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        navigate(`${current.route}#${service.id}`);
+                      }}
+                      className="bg-[#F4C542] text-black px-4 py-2 rounded-lg text-sm hover:scale-105 transition"
+                    >
+                      Découvrir
+                    </button>
+                  </div>
+                )}
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+      </AnimatePresence>
 
       {/* BOUTON GLOBAL */}
       <div className="text-center mt-16">
         <button
-          onClick={() => navigate("/services")}
+          onClick={() => navigate(current.route)}
           className="bg-[#F4C542] text-black px-6 py-3 rounded-xl hover:scale-105 hover:shadow-lg transition duration-300"
         >
-          Découvrir tous nos services
+          {current.ctaLabel}
         </button>
       </div>
 

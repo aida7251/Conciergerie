@@ -2,17 +2,13 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
-
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [dropdown, setDropdown] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 80);
-    };
-
+    const handleScroll = () => setScrolled(window.scrollY > 80);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -26,11 +22,11 @@ export default function Navbar() {
       }`}
     >
       {/* LOGO */}
-     <img
-  src="/logo-amafa.png"
-  alt="AMAFA Conciergerie"
-  className="h-24 w-auto scale-150 object-contain hover:scale-[1.6] transition duration-300"
-/>
+      <img
+        src="/logo-amafa.png"
+        alt="AMAFA Conciergerie"
+        className="h-24 w-auto scale-150 object-contain hover:scale-[1.6] transition duration-300"
+      />
 
       {/* MENU DESKTOP */}
       <div className="hidden md:flex gap-8 items-center">
@@ -45,7 +41,8 @@ export default function Navbar() {
           onMouseEnter={() => setDropdown(true)}
           onMouseLeave={() => setDropdown(false)}
         >
-          <span className="cursor-pointer hover:text-[#F4C542]">
+          {/* Le mot "Services" n'est plus cliquable */}
+          <span className="cursor-default select-none hover:text-[#F4C542] transition">
             Services
           </span>
 
@@ -55,41 +52,55 @@ export default function Navbar() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 10 }}
-                className="absolute top-8 left-0 bg-white text-black rounded-lg shadow-lg p-4 w-52"
+                className="absolute top-8 left-0 bg-white text-black rounded-2xl shadow-xl p-3 w-64"
               >
-                <Link to="/services" className="block py-2 hover:text-[#F4C542]">
-                  Tous les services
+                {/* ── SECTION LOCATION COURTE DURÉE ── */}
+                <p className="text-[10px] uppercase tracking-[2px] text-gray-400 font-semibold px-3 pt-2 pb-1">
+                  Location courte durée
+                </p>
+
+                <Link
+                  to="/services"
+                  className="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-[#F4C542]/10 hover:text-[#C59B00] transition text-sm font-medium"
+                >
+                  🏡  Tous les services Airbnb
                 </Link>
-                <Link to="/services#menage" className="block py-2 hover:text-[#F4C542]">
-                  Ménage
-                </Link>
-                <Link to="/services#annonce" className="block py-2 hover:text-[#F4C542]">
-                  Annonces
-                </Link>
-                <Link to="/services#photo" className="block py-2 hover:text-[#F4C542]">
-                  Shooting photo
+
+                {/* ── SÉPARATEUR ── */}
+                <div className="border-t border-gray-100 my-2" />
+
+                {/* ── SECTION SUIVI CHANTIER ── */}
+                <p className="text-[10px] uppercase tracking-[2px] text-gray-400 font-semibold px-3 pt-1 pb-1">
+                  Suivi de chantier · Sénégal
+                </p>
+
+                <Link
+                  to="/chantier"
+                  className="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-[#F4C542]/10 hover:text-[#C59B00] transition text-sm font-medium"
+                >
+                  🏗️  Suivi & contrôle de chantier
                 </Link>
               </motion.div>
             )}
           </AnimatePresence>
         </div>
 
-        <Link className="hover:text-[#F4C542]" to="/about">
+        <Link className="hover:text-[#F4C542] transition" to="/about">
           À propos
         </Link>
 
-        <Link className="hover:text-[#F4C542]" to="/contact">
+        <Link className="hover:text-[#F4C542] transition" to="/contact">
           Contact
         </Link>
 
-        <Link className="hover:text-[#F4C542]" to="/join">
+        <Link className="hover:text-[#F4C542] transition" to="/join">
           Nous rejoindre
         </Link>
 
         {/* CTA */}
         <Link
           to="/estimation"
-          className="bg-[#F4C542] text-black px-5 py-2 rounded-xl hover:scale-105 transition"
+          className="bg-[#F4C542] text-black px-5 py-2 rounded-xl hover:scale-105 transition font-semibold"
         >
           Estimer
         </Link>
@@ -97,9 +108,7 @@ export default function Navbar() {
 
       {/* MOBILE BUTTON */}
       <div className="md:hidden">
-        <button onClick={() => setMenuOpen(!menuOpen)}>
-          ☰
-        </button>
+        <button onClick={() => setMenuOpen(!menuOpen)}>☰</button>
       </div>
 
       {/* MENU MOBILE */}
@@ -109,24 +118,49 @@ export default function Navbar() {
             initial={{ x: "100%" }}
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
-            className="fixed top-0 right-0 w-3/4 h-full bg-white text-black p-6 flex flex-col gap-6 z-50"
+            className="fixed top-0 right-0 w-3/4 h-full bg-white text-black p-6 flex flex-col gap-4 z-50 overflow-y-auto"
           >
             <button
-              className="self-end text-xl"
+              className="self-end text-xl mb-2"
               onClick={() => setMenuOpen(false)}
             >
               ✕
             </button>
 
-            <Link to="/">Accueil</Link>
-            <Link to="/services">Services</Link>
-            <Link to="/about">À propos</Link>
-            <Link to="/contact">Contact</Link>
-            <Link to="/join">Nous rejoindre</Link>
+            <Link to="/" onClick={() => setMenuOpen(false)}>Accueil</Link>
+
+            <p className="text-[10px] uppercase tracking-[2px] text-gray-400 font-semibold mt-2">
+              Location courte durée
+            </p>
+            <Link
+              to="/services"
+              onClick={() => setMenuOpen(false)}
+              className="pl-3 text-sm hover:text-[#F4C542] transition"
+            >
+              🏡  Tous les services Airbnb
+            </Link>
+
+            <p className="text-[10px] uppercase tracking-[2px] text-gray-400 font-semibold mt-2">
+              Suivi de chantier · Sénégal
+            </p>
+            <Link
+              to="/chantier"
+              onClick={() => setMenuOpen(false)}
+              className="pl-3 text-sm hover:text-[#F4C542] transition"
+            >
+              🏗️  Suivi & contrôle de chantier
+            </Link>
+
+            <div className="border-t border-gray-100 my-1" />
+
+            <Link to="/about"    onClick={() => setMenuOpen(false)}>À propos</Link>
+            <Link to="/contact"  onClick={() => setMenuOpen(false)}>Contact</Link>
+            <Link to="/join"     onClick={() => setMenuOpen(false)}>Nous rejoindre</Link>
 
             <Link
               to="/estimation"
-              className="bg-[#F4C542] px-4 py-2 rounded-lg text-center"
+              onClick={() => setMenuOpen(false)}
+              className="bg-[#F4C542] px-4 py-2 rounded-lg text-center font-semibold mt-2"
             >
               Estimer mes revenus
             </Link>
