@@ -4,9 +4,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import emailjs from "@emailjs/browser";
 
-// ─── CONFIG ───────────────────────────────────────────────────────────────────
-// Remplace YOUR_FORM_ID par l'ID Formspree (voir instructions en bas du fichier)
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID";
+// ─── CONFIG ───────────────────────────────────────────────────────────[...]
 const WHATSAPP_NUMBER = "33609886595"; // 06 09 88 65 95 au format international sans le 0
 const CONTACT_EMAIL = "amafaconciergerie@gmail.com";
 
@@ -33,7 +31,7 @@ export default function ContactPage() {
   const [errors, setErrors] = useState<Partial<Record<keyof FormState, string>>>({});
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
-  // ── VALIDATION ──────────────────────────────────────────────────────────────
+  // ── VALIDATION ───────────────────────────────────────────────────────────[...]
   const validate = (): boolean => {
     const e: Partial<Record<keyof FormState, string>> = {};
 
@@ -336,7 +334,7 @@ Message : ${error?.message}`
   );
 }
 
-// ── HELPERS ────────────────────────────────────────────────────────────────────
+// ── HELPERS ───────────────────────────────────────────────────────────[...]
 function inputClass(hasError: boolean) {
   return `w-full px-4 py-3 rounded-xl border text-sm transition outline-none ${
     hasError
@@ -366,9 +364,9 @@ function Field({
 }
 
 /*
-═══════════════════════════════════════════════════════════════════════════
+═════════════════════════════════════════════════════════════════[...]
 INSTRUCTIONS DE CONFIGURATION (5 minutes, gratuit)
-═══════════════════════════════════════════════════════════════════════════
+═════════════════════════════════════════════════════════════════[...]
 
 1. EMAIL (Formspree) :
    - Va sur https://formspree.io et crée un compte gratuit avec
@@ -398,5 +396,5 @@ INSTRUCTIONS DE CONFIGURATION (5 minutes, gratuit)
 4. MESSAGE DE CONFIRMATION :
    - Après envoi (email ou WhatsApp), un écran de confirmation
      s'affiche automatiquement avec un message de remerciement
-═══════════════════════════════════════════════════════════════════════════
+═════════════════════════════════════════════════════════════════[...]
 */
