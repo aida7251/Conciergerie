@@ -12,7 +12,7 @@ export default function AboutPage() {
       {/* HERO */}
       <div className="relative h-[65vh]">
         <img
-          src="/images/about-hero.jpg"
+          src="/images/chantier-reception.jpg"
           alt="AMAFA Conciergerie"
           className="w-full h-full object-cover"
         />
@@ -45,7 +45,7 @@ export default function AboutPage() {
         <div className="grid md:grid-cols-2 gap-14 items-center max-w-6xl mx-auto">
 
           <img
-            src="/images/team.jpg"
+            src="/images/annonce.jpg"
             alt="Équipe AMAFA"
             className="rounded-2xl shadow-lg w-full h-[420px] object-cover"
           />
@@ -138,7 +138,7 @@ export default function AboutPage() {
           </div>
 
           <img
-            src="/images/vision.jpg"
+            src="/images/chantier-envois.jpg"
             alt="Notre vision AMAFA"
             className="rounded-2xl shadow-lg w-full h-[420px] object-cover order-1 md:order-2"
           />

@@ -23,7 +23,7 @@ const services = [
     icon: <Sparkles size={28} />,
     title:
       "Création & optimisation d’annonces Airbnb et Booking",
-    video: "/videos/annonce.mp4",
+    video: "/images/annonce.jpg",
 
     short:
       "Transformez votre logement en une annonce premium pensée pour augmenter votre visibilité, vos réservations et vos revenus.",
@@ -67,7 +67,7 @@ un logement plus visible, une meilleure rentabilité et davantage de réservatio
     id: "menage",
     icon: <Home size={28} />,
     title: "Ménage professionnel & gestion du linge",
-    video: "/videos/menage.mp4",
+    video: "/images/menage.jpg",
 
     short:
       "Un logement impeccable après chaque séjour pour garantir des avis 5 étoiles et fidéliser les voyageurs.",
@@ -108,7 +108,7 @@ un logement toujours impeccable, de meilleurs avis voyageurs et une gestion tota
     id: "photo",
     icon: <Camera size={28} />,
     title: "Shooting photo professionnel",
-    video: "/videos/photo.mp4",
+    video: "/images/photo.jpg",
 
     short:
       "Des photos professionnelles qui valorisent votre logement et augmentent vos réservations.",
@@ -154,7 +154,7 @@ plus de visibilité, plus de réservations et une meilleure rentabilité pour vo
     id: "assurance",
     icon: <ShieldCheck size={28} />,
     title: "Assurance & protection du bien",
-    video: "/videos/assurance.mp4",
+    video: "/images/assurance.jpg",
 
     short:
       "Une double protection pour sécuriser votre logement pendant chaque réservation.",
@@ -197,7 +197,7 @@ une meilleure tranquillité d’esprit, une gestion réactive des incidents et u
     id: "maintenance",
     icon: <Wrench size={28} />,
     title: "Maintenance & interventions",
-    video: "/videos/maintenance.mp4",
+    video: "/images/maintenance.jpg",
 
     short:
       "Une intervention rapide pour éviter les problèmes voyageurs et protéger votre rentabilité.",
@@ -229,7 +229,7 @@ moins de stress, moins d’imprévus et une activité locative sécurisée tout 
     id: "checkin",
     icon: <CheckCircle size={28} />,
     title: "Check-in / Check-out",
-    video: "/videos/checkin.mp4",
+    video: "/images/checkin.jpg",
 
     short:
       "Une arrivée autonome, sécurisée et une gestion complète des voyageurs.",
@@ -260,7 +260,7 @@ une meilleure expérience voyageur, une sécurité renforcée et une gestion pro
     id: "control",
     icon: <ClipboardCheck size={28} />,
     title: "Contrôle hebdomadaire du logement",
-    video: "/videos/control.mp4",
+    video: "/images/control.jpg",
 
     short:
       "Un suivi régulier pour les propriétaires souhaitant garder un œil sur leur bien à distance.",
@@ -293,7 +293,7 @@ plus de sérénité, une meilleure anticipation des problèmes et un logement to
     id: "facturation",
     icon: <Wallet size={28} />,
     title: "Facturation & gestion des revenus",
-    video: "/videos/facturation.mp4",
+    video: "/images/facturation.jpg",
 
     short:
       "Une gestion claire et transparente de vos revenus et dépenses locatives.",
@@ -325,7 +325,7 @@ une gestion financière plus claire, un gain de temps administratif et une meill
     id: "admin",
     icon: <FileText size={28} />,
     title: "Démarches administratives & accompagnement",
-    video: "/videos/admin.mp4",
+    video: "/images/admin.jpg",
 
     short:
       "Un accompagnement professionnel pour simplifier la gestion administrative de votre activité.",
@@ -414,7 +414,7 @@ export default function ServicesPage() {
     {/* MAIN CARD */}
     <div className="bg-white rounded-[35px] shadow-2xl overflow-hidden">
 
-      <div className="grid lg:grid-cols-2">
+      <div className="grid lg:grid-cols-[45%_55%] min-h-[420px]">
 
         {/* LEFT CONTENT */}
         <div className="p-10 md:p-14">
@@ -488,7 +488,7 @@ export default function ServicesPage() {
   </h3>
 
   <p className="text-[#F4C542] font-bold text-2xl mb-4">
-    Valeur estimée : 249€
+    Valeur estimée : 100 000 franc
   </p>
 
   {/* <p className="text-gray-600 text-lg leading-relaxed">
@@ -622,26 +622,37 @@ export default function ServicesPage() {
                 className="bg-gradient-to-br from-white to-[#f8f6f2] rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500"
               >
 
-                <div className="grid lg:grid-cols-2">
+                <div className="grid lg:grid-cols-[45%_55%] min-h-[420px]">
 
                   {/* VIDEO */}
                   <div className="relative overflow-hidden">
 
-                    <video
-                      src={service.video}
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                      className="w-full h-full object-cover hover:scale-105 transition duration-700"
-                    />
+              {/* IMAGE */}
+{/* IMAGE */}
+<div className="relative overflow-hidden h-full min-h-[420px]">
 
+  <img
+    src={service.video}
+    alt={service.title}
+    loading="lazy"
+    className="
+      absolute inset-0
+      w-full h-full
+      object-cover
+      transition-transform duration-700
+      hover:scale-105
+    "
+  />
+
+  <div className="absolute inset-0 bg-gradient-to-r from-black/10 via-transparent to-transparent"></div>
+
+</div>
                     <div className="absolute inset-0 bg-black/20" />
 
                   </div>
 
                   {/* CONTENT */}
-                  <div className="p-10 lg:p-14 flex flex-col justify-center">
+                  <div className="p-10 lg:p-14 flex flex-col justify-center bg-white">
 
                     <div className="flex items-center gap-4 mb-6 text-[#1F3D37]">
                       {service.icon}

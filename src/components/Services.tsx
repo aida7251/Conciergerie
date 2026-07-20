@@ -7,63 +7,63 @@ const airbnbServices = [
   {
     id: "annonce",
     title: "Annonces Airbnb & Booking",
-    video: "/videos/annonce.mp4",
+    video: "/images/annonce.jpg",
     description:
       "Création et optimisation complète de vos annonces pour maximiser vos réservations.",
   },
   {
     id: "menage",
     title: "Ménage professionnel",
-    video: "/videos/menage.mp4",
+    video: "/images/menage.jpg",
     description:
       "Nettoyage complet avec changement de draps et serviettes.",
   },
   {
     id: "photo",
     title: "Shooting photo",
-    video: "/videos/photo.mp4",
+    video: "/images/photo.jpg",
     description:
       "Photos professionnelles pour valoriser votre bien.",
   },
   {
     id: "assurance",
     title: "Assurance",
-    video: "/videos/assurance.mp4",
+    video: "/images/assurance.jpg",
     description:
       "Gestion de l'assurance Airbnb et couverture complémentaire.",
   },
   {
     id: "maintenance",
     title: "Maintenance",
-    video: "/videos/maintenance.mp4",
+    video: "/images/maintenance.jpg",
     description:
       "Intervention rapide en cas de problème.",
   },
   {
     id: "checkin",
     title: "Check-in / Check-out",
-    video: "/videos/checkin.mp4",
+    video: "/images/checkin.jpg",
     description:
       "Accueil des voyageurs et état des lieux complet.",
   },
   {
     id: "control",
     title: "Contrôle hebdomadaire",
-    video: "/videos/control.mp4",
+    video: "/images/control.jpg",
     description:
       "Inspection régulière du logement.",
   },
   {
     id: "facturation",
     title: "Facturation",
-    video: "/videos/facturation.mp4",
+    video: "/images/facturation.jpg",
     description:
       "Gestion complète des paiements et factures.",
   },
   {
     id: "admin",
     title: "Démarches administratives",
-    video: "/videos/admin.mp4",
+    video: "/images/admin.jpg",
     description:
       "Accompagnement pour les équipements et obligations.",
   },
@@ -74,42 +74,42 @@ const chantierServices = [
   {
     id: "reporting",
     title: "Reporting hebdomadaire",
-    video: "/videos/chantier-reporting.mp4",
+    video: "/images/control.jpg",
     description:
       "Photos et vidéos horodatées de votre chantier chaque vendredi.",
   },
   {
     id: "envois",
     title: "Contrôle des envois d'argent",
-    video: "/videos/chantier-envois.mp4",
+    video: "/images/chantier-envois.jpg",
     description:
       "Vérification sous 48h que votre argent est bien en matériaux.",
   },
   {
     id: "livraisons",
     title: "Contrôle des livraisons",
-    video: "/videos/chantier-livraisons.mp4",
+    video: "/images/chantier-livraisons.jpg",
     description:
       "Présence physique au moment de chaque livraison de matériaux.",
   },
   {
     id: "devis",
     title: "Analyse de devis",
-    video: "/videos/chantier-devis.mp4",
+    video: "/images/chantier-devis.jpg",
     description:
       "Comparaison avec les prix réels du marché à Dakar.",
   },
   {
     id: "urgence",
     title: "Intervention d'urgence",
-    video: "/videos/chantier-urgence.mp4",
+    video: "/images/chantier-urgence.jpg",
     description:
       "Visite sous 24 à 48h en cas de doute ou d'anomalie.",
   },
   {
     id: "reception",
     title: "Réception finale",
-    video: "/videos/chantier-reception.mp4",
+    video: "/images/chantier-reception.jpg",
     description:
       "Visite complète avant le paiement du solde au maçon.",
   },
@@ -199,14 +199,13 @@ export default function Services() {
               onMouseLeave={() => setActiveIndex(null)}
             >
               {/* VIDEO */}
-              <video
-                src={service.video}
-                muted
-                loop
-                playsInline
-                autoPlay
-                className="w-full h-[250px] object-cover group-hover:scale-110 transition duration-700 bg-[#162e29]"
-              />
+             {/* IMAGE */}
+<img
+  src={service.video}
+  alt={service.title}
+  className="w-full h-[250px] object-cover group-hover:scale-110 transition duration-700 bg-[#162e29]"
+  loading="lazy"
+/>
 
               {/* OVERLAY */}
               <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition duration-300"></div>

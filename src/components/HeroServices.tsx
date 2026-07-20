@@ -6,7 +6,7 @@ export default function HeroServices() {
 
       {/* IMAGE AVEC ZOOM */}
       <motion.img
-        src="/images/service-hero.jpg"
+        src="/images/appartement.jpg"
         alt="Conciergerie Airbnb"
         initial={{ scale: 1.2 }}
         animate={{ scale: 1 }}

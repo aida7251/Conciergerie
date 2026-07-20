@@ -2,12 +2,13 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import emailjs from "@emailjs/browser";
 
 // ─── CONFIG ───────────────────────────────────────────────────────────────────
 // Remplace YOUR_FORM_ID par l'ID Formspree (voir instructions en bas du fichier)
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID";
 const WHATSAPP_NUMBER = "33609886595"; // 06 09 88 65 95 au format international sans le 0
-const CONTACT_EMAIL = "dasey7251@gmail.com";
+const CONTACT_EMAIL = "amafaconciergerie@gmail.com";
 
 type Sujet = "" | "airbnb" | "chantier" | "autre";
 
@@ -64,36 +65,44 @@ export default function ContactPage() {
   };
 
   // ── SUBMIT (envoi email via Formspree) ──────────────────────────────────────
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!validate()) return;
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
 
-    setStatus("sending");
+  if (!validate()) return;
 
-    try {
-      const res = await fetch(FORMSPREE_ENDPOINT, {
-        method: "POST",
-        headers: { Accept: "application/json", "Content-Type": "application/json" },
-        body: JSON.stringify({
-          nom: form.nom,
-          telephone: form.telephone,
-          email: form.email,
-          sujet: sujetLabel(form.sujet),
-          message: form.message,
-          _subject: `Nouvelle demande AMAFA : ${sujetLabel(form.sujet)}`,
-        }),
-      });
+  setStatus("sending");
 
-      if (res.ok) {
-        setStatus("sent");
-        setForm(initialState);
-      } else {
-        setStatus("error");
-      }
-    } catch {
-      setStatus("error");
-    }
-  };
+  try {
+    await emailjs.send(
+  "service_darf2vd",
+  "template_o5y4a4e", // ✅Bon Template ID
+  {
+    nom: form.nom,
+    telephone: form.telephone,
+    email: form.email,
+    sujet: sujetLabel(form.sujet),
+    message: form.message,
+  },
+  "O7BCiWI_xGQTKHZgG"
+);
+setStatus("sent");
+setForm(initialState);
+
+   alert(
+  " Message envoyé avec succès."
+);
+  } catch (error: any) {
+  console.log("EMAILJS ERROR", error);
+
+  alert(
+    `Status : ${error?.status}
+Text : ${error?.text}
+Message : ${error?.message}`
+  );
+
+  setStatus("error");
+}
+};
 
   // ── WHATSAPP (envoi direct, fonctionne toujours, pas de backend requis) ─────
   const sendToWhatsApp = () => {
@@ -109,8 +118,9 @@ export default function ContactPage() {
     );
 
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${text}`, "_blank");
-    setStatus("sent");
-    setForm(initialState);
+   alert(
+  "Vous allez être redirigé vers WhatsApp.\n\nCliquez ensuite sur 'Envoyer' dans WhatsApp afin que votre message nous soit transmis."
+);
   };
 
   const sujetLabel = (s: Sujet) => {
@@ -362,13 +372,13 @@ INSTRUCTIONS DE CONFIGURATION (5 minutes, gratuit)
 
 1. EMAIL (Formspree) :
    - Va sur https://formspree.io et crée un compte gratuit avec
-     dasey7251@gmail.com
+     amafaconciergerie@gmail.com
    - Crée un nouveau formulaire ("New Form")
    - Copie l'ID fourni (ex: "abcd1234") et remplace YOUR_FORM_ID
      dans FORMSPREE_ENDPOINT en haut de ce fichier
    - Formspree t'enverra un email de confirmation à valider une fois,
      ensuite chaque message du formulaire arrivera automatiquement
-     sur dasey7251@gmail.com
+     sur amafaconciergerie@gmail.com
    - Plan gratuit : 50 messages/mois, largement suffisant pour démarrer
 
 2. WHATSAPP :

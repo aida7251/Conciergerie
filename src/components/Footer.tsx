@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const WHATSAPP_NUMBER = "33609886595";
-const CONTACT_EMAIL = "dasey7251@gmail.com";
+const CONTACT_EMAIL = "amafaconciergerie@gmail.com";
 
 export default function Footer() {
   return (

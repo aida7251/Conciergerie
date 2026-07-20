@@ -63,7 +63,7 @@ export default function Navbar() {
                   to="/services"
                   className="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-[#F4C542]/10 hover:text-[#C59B00] transition text-sm font-medium"
                 >
-                  🏡  Tous les services Airbnb
+                  Tous les services Airbnb
                 </Link>
 
                 {/* ── SÉPARATEUR ── */}
@@ -78,7 +78,7 @@ export default function Navbar() {
                   to="/chantier"
                   className="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-[#F4C542]/10 hover:text-[#C59B00] transition text-sm font-medium"
                 >
-                  🏗️  Suivi & contrôle de chantier
+                   Suivi & contrôle de chantier
                 </Link>
               </motion.div>
             )}
@@ -137,7 +137,7 @@ export default function Navbar() {
               onClick={() => setMenuOpen(false)}
               className="pl-3 text-sm hover:text-[#F4C542] transition"
             >
-              🏡  Tous les services Airbnb
+                Tous les services Airbnb
             </Link>
 
             <p className="text-[10px] uppercase tracking-[2px] text-gray-400 font-semibold mt-2">
@@ -148,7 +148,7 @@ export default function Navbar() {
               onClick={() => setMenuOpen(false)}
               className="pl-3 text-sm hover:text-[#F4C542] transition"
             >
-              🏗️  Suivi & contrôle de chantier
+                Suivi & contrôle de chantier
             </Link>
 
             <div className="border-t border-gray-100 my-1" />
