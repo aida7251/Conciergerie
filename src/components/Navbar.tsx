@@ -12,6 +12,17 @@ export default function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+  useEffect(() => {
+  if (menuOpen) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "";
+  }
+
+  return () => {
+    document.body.style.overflow = "";
+  };
+}, [menuOpen]);
 
   return (
     <nav
@@ -108,7 +119,14 @@ export default function Navbar() {
 
       {/* MOBILE BUTTON */}
       <div className="md:hidden">
-        <button onClick={() => setMenuOpen(!menuOpen)}>☰</button>
+     <button
+  onClick={() => {
+    window.scrollTo({ top: 0, behavior: "instant" });
+    setMenuOpen(true);
+  }}
+>
+  ☰
+</button>
       </div>
 
       {/* MENU MOBILE */}
@@ -122,7 +140,11 @@ export default function Navbar() {
           >
             <button
               className="self-end text-xl mb-2"
-              onClick={() => setMenuOpen(false)}
+              // onClick={() => setMenuOpen(false)}
+              onClick={() => {
+  setMenuOpen(false);
+  document.body.style.overflow = "";
+}}
             >
               ✕
             </button>
