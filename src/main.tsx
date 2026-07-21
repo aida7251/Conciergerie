@@ -9,18 +9,23 @@ import BlogPage from "./pages/BlogPage";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 import JoinPage from "./pages/JoinPage";
+import ScrollToTop from "./components/ScrollToTop";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <BrowserRouter>
+
+    <ScrollToTop />
+
     <Routes>
-      <Route path="/"          element={<App />} />
-      <Route path="/services"  element={<ServicesPage />} />
-      <Route path="/chantier"  element={<ChantierPage />} />
+      <Route path="/" element={<App />} />
+      <Route path="/services" element={<ServicesPage />} />
+      <Route path="/chantier" element={<ChantierPage />} />
       <Route path="/estimation" element={<EstimationPage />} />
-      <Route path="/blog"      element={<BlogPage />} />
-      <Route path="/about"     element={<AboutPage />} />
-      <Route path="/contact"   element={<ContactPage />} />
-      <Route path="/join"      element={<JoinPage />} />
+      <Route path="/blog" element={<BlogPage />} />
+      <Route path="/about" element={<AboutPage />} />
+      <Route path="/contact" element={<ContactPage />} />
+      <Route path="/join" element={<JoinPage />} />
     </Routes>
+
   </BrowserRouter>
 );

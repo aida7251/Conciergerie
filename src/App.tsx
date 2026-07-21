@@ -8,10 +8,13 @@ import FAQ from "./components/FAQ";
 import BlogPreview from "./components/BlogPreview";
 import Footer from "./components/Footer";
 
+
 {/* <Footer /> */}
 function App() {
   return (
     <>
+  
+
       {/* NAVBAR */}
       <Navbar />
 
