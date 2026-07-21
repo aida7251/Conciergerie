@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 
 // ─── CONFIG ───────────────────────────────────────────────────────────────────
 const WHATSAPP_NUMBER = "33609886595";
-const CONTACT_EMAIL = "dasey7251@gmail.com";
+const CONTACT_EMAIL = "amafaconciergerie@gmail.com";
 
 // ─── OFFRES ───────────────────────────────────────────────────────────────────
 type ContratType = "ponctuel" | "evolutif";
