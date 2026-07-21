@@ -136,7 +136,7 @@ export default function Navbar() {
             initial={{ x: "100%" }}
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
-            className="fixed top-0 right-0 w-3/4 h-full bg-white text-black p-6 flex flex-col gap-4 z-50 overflow-y-auto"
+          className="fixed top-0 left-0 w-screen h-screen bg-white text-black p-6 flex flex-col gap-4 z-[9999] overflow-y-auto"
           >
             <button
               className="self-end text-xl mb-2"
