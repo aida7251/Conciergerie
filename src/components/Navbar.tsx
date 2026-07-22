@@ -33,11 +33,13 @@ export default function Navbar() {
       }`}
     >
       {/* LOGO */}
-      <img
-        src="/logo-amafa.png"
-        alt="AMAFA Conciergerie"
-        className="h-24 w-auto scale-150 object-contain hover:scale-[1.6] transition duration-300"
-      />
+      <Link to="/" aria-label="Retour à l'accueil AMAFA">
+  <img
+    src="/logo-amafa.png"
+    alt="AMAFA - Conciergerie Airbnb à Dakar et suivi de chantier au Sénégal"
+    className="h-24 w-auto scale-150 object-contain hover:scale-[1.6] transition duration-300"
+  />
+</Link>
 
       {/* MENU DESKTOP */}
       <div className="hidden md:flex gap-8 items-center">
@@ -54,7 +56,7 @@ export default function Navbar() {
         >
           {/* Le mot "Services" n'est plus cliquable */}
           <span className="cursor-default select-none hover:text-[#F4C542] transition">
-            Services
+           Nos Services
           </span>
 
           <AnimatePresence>
@@ -74,7 +76,7 @@ export default function Navbar() {
                   to="/services"
                   className="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-[#F4C542]/10 hover:text-[#C59B00] transition text-sm font-medium"
                 >
-                  Tous les services Airbnb
+       Conciergerie Airbnb à Dakar
                 </Link>
 
                 {/* ── SÉPARATEUR ── */}
@@ -89,7 +91,7 @@ export default function Navbar() {
                   to="/chantier"
                   className="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-[#F4C542]/10 hover:text-[#C59B00] transition text-sm font-medium"
                 >
-                   Suivi & contrôle de chantier
+                   Suivi de chantier au Sénégal
                 </Link>
               </motion.div>
             )}
@@ -107,13 +109,19 @@ export default function Navbar() {
         <Link className="hover:text-[#F4C542] transition" to="/join">
           Nous rejoindre
         </Link>
+        <Link
+    className="hover:text-[#F4C542] transition"
+    to="/blog"
+>
+    Blog
+</Link>
 
         {/* CTA */}
         <Link
           to="/estimation"
           className="bg-[#F4C542] text-black px-5 py-2 rounded-xl hover:scale-105 transition font-semibold"
         >
-          Estimer
+        Estimer mes revenus
         </Link>
       </div>
 
@@ -152,25 +160,25 @@ export default function Navbar() {
             <Link to="/" onClick={() => setMenuOpen(false)}>Accueil</Link>
 
             <p className="text-[10px] uppercase tracking-[2px] text-gray-400 font-semibold mt-2">
-              Location courte durée
+              Conciergerie Airbnb
             </p>
             <Link
               to="/services"
               onClick={() => setMenuOpen(false)}
               className="pl-3 text-sm hover:text-[#F4C542] transition"
             >
-                Tous les services Airbnb
+                Conciergerie Airbnb à Dakar
             </Link>
 
             <p className="text-[10px] uppercase tracking-[2px] text-gray-400 font-semibold mt-2">
-              Suivi de chantier · Sénégal
+             Construction & suivi de chantier
             </p>
             <Link
               to="/chantier"
               onClick={() => setMenuOpen(false)}
               className="pl-3 text-sm hover:text-[#F4C542] transition"
             >
-                Suivi & contrôle de chantier
+                Suivi de chantier au Sénégal
             </Link>
 
             <div className="border-t border-gray-100 my-1" />

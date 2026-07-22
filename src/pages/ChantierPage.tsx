@@ -297,7 +297,15 @@ export default function ChantierPage() {
 
       {/* ── HERO ────────────────────────────────────────────────────────────── */}
       <section className="relative w-full min-h-[70vh] bg-[#0d1f1b] overflow-hidden flex items-center">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0d1f1b] via-[#1a3530] to-[#0d1f1b] opacity-95" />
+    {/* IMAGE HERO */}
+<img
+  src="/images/hero-chantier.jpg"
+  alt="Suivi de chantier au Sénégal par AMAFA"
+  className="absolute inset-0 w-full h-full object-cover"
+/>
+
+{/* Overlay */}
+<div className="absolute inset-0 bg-black/55" />
         {/* decorative circles */}
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#F4C542]/5 rounded-full blur-3xl" />
         <div className="absolute bottom-0 left-0 w-72 h-72 bg-[#F4C542]/5 rounded-full blur-3xl" />

@@ -6,7 +6,7 @@ const airbnbBenefits = [
   {
     value: 30,
     suffix: "%",
-    title: "Revenus optimisés",
+    title: "Revenus locatifs",
     text: "Grâce à une stratégie tarifaire intelligente et une visibilité renforcée sur Airbnb & Booking, nous maximisons le potentiel locatif de votre logement.",
   },
   {
@@ -24,18 +24,18 @@ const airbnbBenefits = [
   {
     value: 90,
     suffix: "%",
-    title: "Taux d'occupation",
+    title: "Jusqu'à 90 %de taux d'occupation",
     text: "Nous optimisons votre calendrier et la performance des annonces afin d'améliorer le remplissage du logement toute l'année.",
   },
   {
     value: 100,
     suffix: "%",
-    title: "Gestion déléguée",
+    title: "Gestion complète Airbnb",
     text: "Vous gardez les revenus et la propriété du logement pendant que nous gérons l'intégralité des opérations.",
   },
   {
     label: "20%",
-    title: "Commission claire",
+    title: "Commission transparente",
     text: "Une commission unique sur vos revenus encaissés. Aucun frais fixe, aucune mauvaise surprise.",
   },
 ];
@@ -45,13 +45,13 @@ const chantierBenefits = [
   {
     value: 48,
     suffix: "h",
-    title: "Délai de contrôle",
+    title: "Contrôle après chaque transfert",
     text: "Après chaque envoi d'argent, notre agent passe sur le chantier sous 48h pour vérifier que les matériaux sont bien présents.",
   },
   {
     value: 0,
     suffix: "",
-    title: "Mauvaise surprise",
+    title: "Mauvaise surprise à votre retour",
     text: "Vous recevez la vérité chaque semaine, pas des promesses. Aucune découverte au moment de vos vacances au pays.",
   },
   {
@@ -63,7 +63,7 @@ const chantierBenefits = [
   {
     value: 100,
     suffix: "%",
-    title: "Livraisons contrôlées",
+    title: "Contrôle des livraisons",
     text: "Notre agent est physiquement présent à chaque livraison de matériaux pour vérifier quantités et qualité apparente.",
   },
   {
@@ -97,7 +97,7 @@ const tabsConfig: Record<
   airbnb: {
     label: "Location courte durée",
     benefits: airbnbBenefits,
-    heading: "Une gestion premium pensée\npour la performance",
+    heading: "Une gestion Airbnb premiumpour maximiser vos revenus locatifs",
     sub: "AMAFA Conciergerie accompagne les propriétaires au Sénégal dans la gestion complète de leurs locations courte durée avec une approche moderne, transparente et haut de gamme.",
     bottomTitle: "Maximisez vos revenus.\nSans contraintes.",
     bottomText:
@@ -108,7 +108,7 @@ const tabsConfig: Record<
   chantier: {
     label: "Suivi de chantier · Sénégal",
     benefits: chantierBenefits,
-    heading: "Un contrôle rigoureux pensé\npour votre tranquillité",
+    heading: "Le suivi de chantier au Sénégal pour construire en toute confiance",
     sub: "AMAFA Conciergerie accompagne la diaspora sénégalaise dans le suivi et le contrôle de leurs chantiers à Dakar avec une approche transparente, réactive et sans surprise.",
     bottomTitle: "Vous envoyez.\nNous vérifions.",
     bottomText:
@@ -355,6 +355,11 @@ export default function Benefits() {
                 {current.cta2.label}
               </a>
             </div>
+            <p className="mt-6 text-white/60 text-sm max-w-2xl mx-auto leading-relaxed">
+  {tab === "airbnb"
+    ? "Service de conciergerie Airbnb disponible à Dakar et au Sénégal pour la gestion de votre location courte durée."
+    : "Service de suivi et contrôle de chantier à Dakar pour les Sénégalais vivant à l'étranger."}
+</p>
           </motion.div>
         </AnimatePresence>
 

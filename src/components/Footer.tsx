@@ -21,9 +21,10 @@ export default function Footer() {
               <h3 className="text-xl font-bold">AMAFA</h3>
             </div>
             <p className="text-sm text-white/60 leading-relaxed mb-4">
-              Gestion de locations courte durée et suivi de chantier pour la
-              diaspora, basés à Dakar, Sénégal.
-            </p>
+  AMAFA Conciergerie accompagne les propriétaires avec un service de
+  conciergerie Airbnb et de suivi de chantier à Dakar et partout au
+  Sénégal.
+</p>
             <div className="flex gap-3">
               <a
                 href="https://facebook.com"
@@ -63,12 +64,12 @@ export default function Footer() {
             <ul className="space-y-2.5 text-sm text-white/70">
               <li>
                 <Link to="/services" className="hover:text-[#F4C542] transition">
-                  Location courte durée
+                 Conciergerie Airbnb
                 </Link>
               </li>
               <li>
                 <Link to="/chantier" className="hover:text-[#F4C542] transition">
-                  Suivi de chantier
+                  Suivi de chantier au sénégal
                 </Link>
               </li>
               <li>
@@ -118,10 +119,13 @@ export default function Footer() {
                   06 09 88 65 95 (WhatsApp)
                 </a>
               </li>
-              <li>Dakar, Sénégal</li>
+              <li>Basés à Dakar, Sénégal</li>
               <li className="text-white/50 text-xs pt-2">
                 Disponible 7j/7, réponse sous 24h
               </li>
+              <li className="text-white/50 text-xs">
+  Conciergerie Airbnb • Suivi de chantier • Dakar • Sénégal
+</li>
             </ul>
             <Link
               to="/contact"
@@ -160,7 +164,7 @@ export default function Footer() {
         {/* BAS */}
         <div className="border-t border-white/10 mt-12 pt-6 pb-8 flex flex-col sm:flex-row justify-between items-center gap-3 text-sm text-white/40">
           <p>© {new Date().getFullYear()} AMAFA Conciergerie. Tous droits réservés.</p>
-          <p>Conçu avec soin pour la diaspora et les propriétaires au Sénégal.</p>
+          <p>Conçu pour accompagner les propriétaires et la diaspora sénégalaise.</p>
         </div>
 
       </div>

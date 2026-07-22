@@ -4,56 +4,64 @@ import { motion, AnimatePresence } from "framer-motion";
 // ─── FAQ AIRBNB ───────────────────────────────────────────────────────────────
 const airbnbFaq = [
   {
-    q: "Comment fonctionne la commission AMAFA ?",
-    a: "Notre commission est de 20% des revenus bruts encaissés auprès des voyageurs, prélevée uniquement sur ce que vous encaissez réellement. Il n'y a aucun frais fixe mensuel, aucun frais de mise en route caché et aucune mauvaise surprise sur votre facture. Concrètement, si votre logement ne se loue pas un mois donné, vous ne payez rien ce mois-là. Notre intérêt est directement aligné avec le vôtre : plus votre bien génère de revenus, plus nous sommes motivés à optimiser sa performance sur le long terme.",
+    q: "Comment fonctionne la commission de la conciergerie Airbnb AMAFA ?",
+    a: "Notre commission est de 20 % des revenus bruts encaissés auprès des voyageurs, prélevée uniquement sur ce que vous encaissez réellement. Il n'y a aucun frais fixe mensuel, aucun frais caché et aucune mauvaise surprise. Si votre logement ne se loue pas pendant un mois, vous ne payez aucune commission. Notre intérêt est directement aligné avec le vôtre : plus votre location Airbnb génère de revenus, plus nous sommes motivés à optimiser ses performances sur le long terme.",
   },
   {
-    q: "Sur quelles plateformes gérez-vous mon annonce ?",
-    a: "Nous créons, rédigeons et optimisons vos annonces sur Airbnb et Booking.com, qui restent les deux plateformes générant le plus de réservations pour la location courte durée au Sénégal. Les calendriers sont synchronisés automatiquement entre les plateformes pour éviter tout risque de double réservation. Nous ajustons également les prix en continu selon la saisonnalité, les événements locaux et la demande, afin de maximiser votre taux d'occupation toute l'année plutôt que de vous laisser un prix figé.",
+    q: "Sur quelles plateformes gérez-vous mon logement Airbnb ?",
+    a: "Nous créons, rédigeons et optimisons vos annonces sur Airbnb et Booking.com, les deux principales plateformes de location courte durée au Sénégal. Les calendriers sont synchronisés automatiquement afin d'éviter les doubles réservations. Nous adaptons également les tarifs selon la saison, les événements locaux et la demande afin d'optimiser votre taux d'occupation et la rentabilité de votre logement.",
   },
   {
-    q: "Qui s'occupe du ménage entre chaque séjour ?",
-    a: "Le ménage est assuré par des prestataires professionnels partenaires, agréés Services à la Personne, sélectionnés et coordonnés par notre équipe. Chaque intervention comprend un nettoyage complet, la désinfection des surfaces, le changement complet du linge et un contrôle qualité avec photos avant la prochaine arrivée. Selon votre éligibilité, ces prestations peuvent également bénéficier du dispositif d'Avance Immédiate du Crédit d'Impôt, réduisant directement le coût sans attendre le remboursement l'année suivante.",
+    q: "Qui réalise le ménage entre deux locations Airbnb ?",
+    a: "Le ménage est assuré par des prestataires professionnels sélectionnés et coordonnés par notre équipe. Chaque intervention comprend un nettoyage complet, la désinfection des surfaces, le remplacement du linge ainsi qu'un contrôle qualité avant l'arrivée des prochains voyageurs. Nous veillons à ce que votre logement reste impeccable après chaque séjour.",
   },
   {
-    q: "Que se passe-t-il en cas de problème technique chez un voyageur ?",
-    a: "Nous disposons d'un réseau de prestataires qualifiés en plomberie, électricité, serrurerie et électroménager, capables d'intervenir rapidement pour limiter l'impact sur l'expérience du voyageur et éviter les avis négatifs. Dès qu'un problème est signalé, notre équipe coordonne l'intervention, suit sa résolution et vous tient informé. Les frais de réparation restent à votre charge en tant que propriétaire, mais vous n'avez jamais à gérer vous-même la recherche d'un artisan disponible en urgence.",
+    q: "Que se passe-t-il en cas de problème technique pendant un séjour Airbnb ?",
+    a: "Nous disposons d'un réseau de professionnels qualifiés en plomberie, électricité, serrurerie et électroménager capables d'intervenir rapidement. Dès qu'un problème est signalé, nous coordonnons l'intervention, suivons sa résolution et vous tenons informé. Les frais de réparation restent à votre charge, mais vous n'avez jamais à rechercher un artisan ou à gérer l'urgence vous-même.",
   },
   {
-    q: "Le shooting photo est-il vraiment offert ?",
-    a: "Oui, sans condition cachée. Pour tout engagement de gestion supérieur à 6 mois, nous offrons un shooting photo professionnel complet, d'une valeur estimée à 249€. Nos photographes travaillent la mise en scène, la lumière naturelle et les angles de prise de vue pour révéler le potentiel réel de votre logement. Des photos de qualité augmentent directement le taux de clic sur votre annonce et donc vos réservations — c'est un investissement que nous prenons en charge dès le lancement de notre collaboration.",
+    q: "Le shooting photo professionnel est-il vraiment offert ?",
+    a: "Oui. Pour tout contrat de gestion supérieur à 6 mois, nous offrons un shooting photo professionnel d'une valeur estimée à 249 €. Des photos de qualité permettent d'améliorer la visibilité de votre annonce Airbnb, d'augmenter le taux de clic et de favoriser davantage de réservations. C'est un investissement que nous prenons en charge dès le début de notre collaboration.",
   },
   {
-    q: "Puis-je suivre mes revenus facilement ?",
-    a: "Vous recevez chaque mois un reporting détaillé incluant l'historique complet de vos réservations, le montant exact des revenus encaissés, le suivi des dépenses liées au logement et le calcul de notre commission. Tout est présenté de façon claire et transparente, sans jargon technique. Vous gardez ainsi une visibilité totale sur la rentabilité réelle de votre bien, mois après mois, sans avoir à réclamer ou reconstituer vous-même ces informations.",
+    q: "Comment suivre les revenus de ma location Airbnb ?",
+    a: "Vous recevez chaque mois un reporting détaillé comprenant l'ensemble des réservations, les revenus encaissés, les dépenses liées au logement ainsi que le calcul de notre commission. Vous disposez d'une vision claire et transparente de la rentabilité de votre bien sans avoir à effectuer vous-même les calculs.",
+  },
+  {
+    q: "Dans quelles villes proposez-vous votre service de conciergerie Airbnb ?",
+    a: "Notre service de conciergerie Airbnb intervient principalement à Dakar. Nous pouvons également accompagner des propriétaires dans d'autres villes du Sénégal selon la localisation du logement et les besoins du projet. N'hésitez pas à nous contacter afin d'étudier votre situation.",
   },
 ];
 
 // ─── FAQ CHANTIER ─────────────────────────────────────────────────────────────
 const chantierFaq = [
   {
-    q: "Est-ce qu'AMAFA gère mon chantier ?",
-    a: "Non, et c'est une distinction essentielle. Votre maçon reste votre maçon, vous gardez la main sur toutes les décisions techniques, le choix des matériaux et le rythme des travaux. Nous ne sommes pas maîtres d'œuvre et nous ne donnons jamais d'ordres aux ouvriers sur place. Notre rôle se limite strictement à observer, photographier et vous rapporter fidèlement ce qui se passe réellement sur votre terrain, pour que vous puissiez prendre vos décisions en toute connaissance de cause depuis la France.",
+    q: "Est-ce qu'AMAFA gère entièrement mon chantier au Sénégal ?",
+    a: "Non, et c'est une distinction essentielle. Votre maçon reste votre maçon, vous gardez la main sur toutes les décisions techniques, le choix des matériaux et le rythme des travaux. Nous ne sommes pas maîtres d'œuvre et nous ne donnons jamais d'ordres aux ouvriers sur place. Notre rôle consiste à assurer le suivi et le contrôle de votre chantier, à observer, photographier et vous rapporter fidèlement ce qui se passe réellement sur votre terrain afin que vous puissiez prendre vos décisions en toute connaissance de cause, même depuis la France.",
   },
   {
-    q: "Comment se passe le contrôle après un envoi d'argent ?",
-    a: "Dès que vous nous informez d'un envoi d'argent à votre maçon, notre agent se rend sur le chantier dans un délai de 48 heures maximum. Il photographie et compte précisément les matériaux présents — sacs de ciment, barres de fer, parpaings, gravier — puis compare ces éléments avec ce que vous nous avez indiqué avoir payé. Vous recevez ensuite un rapport simple et factuel : le montant envoyé, l'objet de l'achat déclaré, et ce qui a été concrètement constaté sur place, avec photos à l'appui.",
+    q: "Comment fonctionne le contrôle de chantier après un envoi d'argent ?",
+    a: "Dès que vous nous informez d'un envoi d'argent à votre maçon, notre agent se rend sur le chantier dans un délai maximum de 48 heures. Il photographie et vérifie précisément les matériaux présents — sacs de ciment, barres de fer, parpaings, gravier — puis compare ces éléments avec ce que vous nous avez indiqué avoir financé. Vous recevez ensuite un rapport clair comprenant le montant envoyé, les achats annoncés et les constatations réalisées sur place, accompagnées de photos.",
   },
   {
-    q: "Le transport est-il vraiment inclus ?",
-    a: "Oui, sans aucune condition cachée. Pour tout chantier situé à Dakar et dans ses environs immédiats, le transport aller-retour de notre agent est entièrement compris dans le tarif annoncé, que vous soyez en formule mensuelle ou en service à la carte. Vous n'avez jamais à avancer ou gérer ces frais vous-même. Pour les chantiers situés en dehors de Dakar — Thiès, Mbour, Saint-Louis ou ailleurs — un supplément de déplacement est calculé au cas par cas et toujours communiqué avant le début de toute intervention.",
+    q: "Le transport est-il vraiment inclus pour les chantiers à Dakar ?",
+    a: "Oui, sans aucune condition cachée. Pour tout chantier situé à Dakar et dans ses environs immédiats, le transport aller-retour de notre agent est entièrement compris dans le tarif annoncé, que vous soyez en formule mensuelle ou en service à la carte. Vous n'avez jamais à avancer ou gérer ces frais vous-même. Pour les chantiers situés en dehors de Dakar — Thiès, Mbour, Saint-Louis ou ailleurs au Sénégal — un supplément de déplacement est calculé au cas par cas et toujours communiqué avant toute intervention.",
   },
   {
-    q: "Que reçois-je exactement chaque semaine ?",
-    a: "Chaque vendredi avant 18 heures, vous recevez un rapport complet par WhatsApp ou par email : entre 15 et 20 photos horodatées et géolocalisées du chantier, une vidéo filmée méthodiquement pour montrer l'ensemble de l'avancement, et un commentaire écrit ou vocal résumant ce qui a progressé dans la semaine. Si une question précise vous préoccupe, vous pouvez nous la poser directement et nous retournons vérifier ce point spécifique lors de notre prochain passage.",
+    q: "Que contient le rapport hebdomadaire de suivi de chantier ?",
+    a: "Chaque vendredi avant 18 heures, vous recevez un rapport complet par WhatsApp ou par email comprenant entre 15 et 20 photos horodatées et géolocalisées du chantier, une vidéo montrant l'ensemble de l'avancement ainsi qu'un commentaire écrit ou vocal résumant les travaux réalisés dans la semaine. Si une question précise vous préoccupe, nous pouvons également vérifier ce point lors de notre prochain passage.",
   },
   {
-    q: "Et si mon agent détecte une anomalie grave ?",
-    a: "Vous êtes alerté immédiatement, sans attendre le rapport hebdomadaire habituel. L'alerte comprend des photos, parfois une vidéo, et une description précise et factuelle de ce qui a été observé — chantier à l'arrêt, écart entre l'argent envoyé et les matériaux visibles, ou tout autre signal inhabituel. C'est ensuite à vous de décider de la marche à suivre avec votre maçon. Si vous le souhaitez, nous pouvons organiser une visite de suivi rapprochée pour vérifier l'évolution de la situation dans les jours suivants.",
+    q: "Que se passe-t-il si une anomalie est détectée sur mon chantier ?",
+    a: "Vous êtes averti immédiatement, sans attendre le rapport hebdomadaire. L'alerte comprend des photos, parfois une vidéo, ainsi qu'une description précise et factuelle de la situation observée : chantier à l'arrêt, différence entre les matériaux présents et les sommes envoyées ou toute autre anomalie constatée. Vous restez libre de décider des suites à donner avec votre maçon. Si nécessaire, nous pouvons organiser une visite de contrôle supplémentaire pour suivre l'évolution de la situation.",
   },
   {
-    q: "Comment se passe le paiement ?",
-    a: "Pour les formules en abonnement comme Sérénité ou Tranquillité, le paiement s'effectue mensuellement et à l'avance, par virement bancaire ou paiement en ligne. Pour les services à la carte — contrôle d'envoi, contrôle de livraison, visite d'urgence ou réception finale — le paiement intervient avant la réalisation de l'intervention. Dans tous les cas, vous recevez toujours une confirmation claire de paiement et le détail exact du service commandé.",
+    q: "Comment se déroule le paiement de votre service de suivi de chantier ?",
+    a: "Pour les formules d'abonnement, le paiement s'effectue mensuellement et à l'avance par virement bancaire ou paiement en ligne. Pour les prestations à la carte — contrôle après un envoi d'argent, contrôle de livraison, visite d'urgence ou réception finale — le règlement est effectué avant l'intervention. Dans tous les cas, vous recevez une confirmation de paiement ainsi qu'un récapitulatif détaillé du service commandé.",
+  },
+  {
+    q: "Intervenez-vous uniquement à Dakar ?",
+    a: "Nous intervenons principalement à Dakar et dans sa région. Pour les autres villes du Sénégal, comme Thiès, Mbour, Saly ou Saint-Louis, nous étudions chaque demande afin de proposer une solution adaptée avec un devis de déplacement transparent.",
   },
 ];
 
@@ -82,10 +90,10 @@ export default function FAQ() {
         <div className="text-center mb-10">
           <div className="w-16 h-[3px] bg-[#F4C542] rounded-full mx-auto mb-5" />
           <h2 className="text-4xl font-bold text-[#1F3D37] mb-3">
-            Questions fréquentes
+                 Questions fréquentes sur notre conciergerie Airbnb & suivi de chantier au sénégal
           </h2>
           <p className="text-gray-500 text-base">
-            Tout ce que vous devez savoir avant de démarrer.
+        Découvrez les réponses aux questions les plus fréquentes sur notre service de conciergerie Airbnb à Dakar  et suivi de chantier au Sénégal.
           </p>
         </div>
 

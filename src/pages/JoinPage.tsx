@@ -161,20 +161,39 @@ export default function JoinPage() {
       <Navbar />
 
       {/* HERO */}
-      <div className="h-[55vh] bg-[#1F3D37] text-white flex flex-col items-center justify-center text-center px-6">
-        <span className="uppercase tracking-[4px] text-sm text-[#F4C542] font-semibold mb-4">
-          Nous rejoindre
-        </span>
-        <h1 className="text-4xl md:text-5xl font-bold mb-5 max-w-2xl leading-tight">
-          Des missions ponctuelles, au cas par cas
-        </h1>
-        <p className="max-w-2xl text-white/75 text-lg leading-relaxed">
-          AMAFA Conciergerie collabore avec des prestataires de confiance à
-          Dakar, sollicités selon nos besoins réels. Aucun CDI proposé pour le
-          moment, à l'exception du ménage qui peut évoluer vers une
-          collaboration régulière selon le développement de notre activité.
-        </p>
-      </div>
+      {/* HERO */}
+<section className="relative h-[55vh] overflow-hidden flex items-center justify-center">
+
+  {/* IMAGE */}
+  <img
+    src="/images/hero-recrutement.jpg"
+    alt="Rejoignez AMAFA Conciergerie à Dakar"
+    className="absolute inset-0 w-full h-full object-cover"
+  />
+
+  {/* Overlay */}
+  <div className="absolute inset-0 bg-black/55"></div>
+
+  {/* Contenu */}
+  <div className="relative z-10 text-center px-6 max-w-3xl">
+
+    <span className="uppercase tracking-[4px] text-sm text-[#F4C542] font-semibold mb-4 block">
+      Nous rejoindre
+    </span>
+
+    <h1 className="text-4xl md:text-5xl font-bold text-white mb-5 leading-tight">
+      Rejoignez le réseau de prestataires AMAFA
+    </h1>
+
+    <p className="text-lg text-white/85 leading-relaxed">
+      Vous êtes basé à Dakar et souhaitez réaliser des missions ponctuelles dans la
+      conciergerie Airbnb ou le suivi de chantier ? Rejoignez notre réseau de
+      partenaires de confiance.
+    </p>
+
+  </div>
+
+</section>
 
       {/* EXPLICATION DU MODÈLE */}
       <div className="bg-white py-16 px-6 md:px-10">
