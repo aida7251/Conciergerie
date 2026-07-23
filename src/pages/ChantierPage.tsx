@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import SEO from "../components/SEO/SEO";
 
 // ─── DATA SERVICES ────────────────────────────────────────────────────────────
 const services = [
@@ -293,6 +294,11 @@ export default function ChantierPage() {
 
   return (
     <>
+    <SEO
+  title="Suivi de chantier au Sénégal | AMAFA Conciergerie"
+  description="Suivez vos travaux à distance grâce à AMAFA : visites régulières, photos, vidéos, comptes rendus et contrôle de l'avancement de votre chantier au Sénégal."
+  canonical="https://amafa-conciergerie.com/chantier"
+/>
       <Navbar />
 
       {/* ── HERO ────────────────────────────────────────────────────────────── */}

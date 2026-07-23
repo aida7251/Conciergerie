@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import emailjs from "@emailjs/browser";
+import SEO from "../components/SEO/SEO";
 
 // ─── CONFIG ───────────────────────────────────────────────────────────[...]
 const WHATSAPP_NUMBER = "33609886595"; // 06 09 88 65 95 au format international sans le 0
@@ -73,7 +74,7 @@ const handleSubmit = async (e: React.FormEvent) => {
   try {
     await emailjs.send(
   "service_darf2vd",
-  "template_o5y4a4e", // ✅Bon Template ID
+  "template_o5y4a4e", // Bon Template ID
   {
     nom: form.nom,
     telephone: form.telephone,
@@ -130,6 +131,11 @@ Message : ${error?.message}`
 
   return (
     <>
+    <SEO
+  title="Contact AMAFA Conciergerie"
+  description="Contactez AMAFA Conciergerie pour votre projet de location Airbnb, de gestion locative ou de suivi de chantier au Sénégal."
+  canonical="https://amafa-conciergerie.com/contact"
+/>
       <Navbar />
 
       {/* HERO */}

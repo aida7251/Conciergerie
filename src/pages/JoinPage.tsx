@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import SEO from "../components/SEO/SEO";
 
 // ─── CONFIG ───────────────────────────────────────────────────────────────────
 const WHATSAPP_NUMBER = "33609886595";
@@ -158,6 +159,11 @@ export default function JoinPage() {
 
   return (
     <>
+    <SEO
+  title="Rejoindre AMAFA | Devenir partenaire ou prestataire"
+  description="Rejoignez le réseau AMAFA Conciergerie en tant que partenaire, artisan, prestataire ou professionnel de la location courte durée au Sénégal."
+  canonical="https://amafa-conciergerie.com/join"
+/>
       <Navbar />
 
       {/* HERO */}

@@ -1,3 +1,5 @@
+import SEO from "../components/SEO/SEO";
+
 const articles = [
   {
     title: "Comment maximiser ses revenus Airbnb",
@@ -23,6 +25,12 @@ const articles = [
 
 export default function BlogPage() {
   return (
+    <> <SEO
+  title="Blog AMAFA | Conseils Airbnb, Immobilier et Sénégal"
+  description="Retrouvez nos conseils sur la location Airbnb, la gestion locative, l'investissement immobilier et le suivi de chantier au Sénégal."
+  canonical="https://amafa-conciergerie.com/blog"
+/> 
+    
     <div className="bg-[#F5F3EF] min-h-screen py-20 px-10">
 
       <h1 className="text-4xl font-bold text-center mb-16">
@@ -48,5 +56,5 @@ export default function BlogPage() {
       </div>
 
     </div>
-  );
+  </>);
 }

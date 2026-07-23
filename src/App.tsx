@@ -8,12 +8,18 @@ import FAQ from "./components/FAQ";
 import BlogPreview from "./components/BlogPreview";
 import Footer from "./components/Footer";
 import StructuredData from "./components/SEO/StructuredData";
+import SEO from "./components/SEO/SEO";
 
 
 {/* <Footer /> */}
 function App() {
   return (
     <>
+    <SEO
+  title="AMAFA Conciergerie | Gestion Airbnb & Suivi de chantier au Sénégal"
+  description="AMAFA Conciergerie accompagne les propriétaires dans la gestion de leurs locations Airbnb et le suivi de chantier au Sénégal."
+  canonical="https://amafa-conciergerie.com/"
+/>
      <StructuredData />
   
 

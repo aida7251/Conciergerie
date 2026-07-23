@@ -3,10 +3,16 @@ import Footer from "../components/Footer";
 import FAQ from "../components/FAQ";
 import BlogPreview from "../components/BlogPreview";
 import { motion } from "framer-motion";
+import SEO from "../components/SEO/SEO";
 
 export default function AboutPage() {
   return (
     <>
+    <SEO
+  title="À propos d'AMAFA Conciergerie"
+  description="Découvrez AMAFA Conciergerie, notre mission, nos valeurs et notre engagement pour accompagner les propriétaires et la diaspora sénégalaise."
+  canonical="https://amafa-conciergerie.com/about"
+/>
       <Navbar />
 
       {/* HERO */}

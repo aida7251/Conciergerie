@@ -16,6 +16,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import FAQ from "../components/FAQ";
 import HeroServices from "../components/HeroServices";
+import SEO from "../components/SEO/SEO";
 
 const services = [
   {
@@ -372,6 +373,11 @@ export default function ServicesPage() {
 
   return (
     <>
+    <SEO
+  title="Services de conciergerie Airbnb au Sénégal | AMAFA"
+  description="Découvrez les services AMAFA : création d'annonces Airbnb, check-in, check-out, ménage, maintenance, optimisation des revenus locatifs et assistance voyageurs."
+  canonical="https://amafa-conciergerie.com/services"
+/>
       <Navbar />
 
       <HeroServices />

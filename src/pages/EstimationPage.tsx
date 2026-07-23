@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import SEO from "../components/SEO/SEO";
 
 // ─── TAUX D'OCCUPATION PAR VILLE (estimations basées sur les données marché) ──
 // Sources : moyennes Airbnb Sénégal, zones touristiques vs résidentielles
@@ -95,6 +96,11 @@ export default function EstimationPage() {
 
   return (
     <>
+    <SEO
+  title="Estimation gratuite de votre location Airbnb | AMAFA"
+  description="Obtenez gratuitement une estimation du potentiel locatif de votre logement au Sénégal et maximisez vos revenus avec AMAFA."
+  canonical="https://amafa-conciergerie.com/estimation"
+/>
       <Navbar />
 
       {/* HERO */}
