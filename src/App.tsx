@@ -7,12 +7,14 @@ import CTA from "./components/CTA";
 import FAQ from "./components/FAQ";
 import BlogPreview from "./components/BlogPreview";
 import Footer from "./components/Footer";
+import StructuredData from "./components/SEO/StructuredData";
 
 
 {/* <Footer /> */}
 function App() {
   return (
     <>
+     <StructuredData />
   
 
       {/* NAVBAR */}

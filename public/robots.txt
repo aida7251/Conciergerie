@@ -1,0 +1,7 @@
+# robots.txt - AMAFA Conciergerie
+# https://amafa-conciergerie.com
+
+User-agent: *
+Allow: /
+
+Sitemap: https://amafa-conciergerie.com/sitemap.xml
